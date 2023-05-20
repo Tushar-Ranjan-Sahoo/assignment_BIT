@@ -1,38 +1,165 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background: rgba(244, 91, 105, 1);
+  font-family: "Asap", sans-serif;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+span{
   color: white;
+  padding: 10px;
+  font-size:35px;
 }
 
-.App-link {
-  color: #61dafb;
+.login {
+  overflow: hidden;
+  background-color: white;
+  padding: 40px 30px 30px 30px;
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  transform: translate(-50%, -50%);
+  transition: transform 300ms, box-shadow 300ms;
+  box-shadow: 5px 10px 10px rgba(2, 128, 144, 0.2);
+}
+.login::before,
+.login::after {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-top-left-radius: 40%;
+  border-top-right-radius: 45%;
+  border-bottom-left-radius: 35%;
+  border-bottom-right-radius: 40%;
+  z-index: -1;
+}
+.login::before {
+  left: 40%;
+  bottom: -130%;
+  background-color: rgba(69, 105, 144, 0.15);
+  animation: wawes 6s infinite linear;
+}
+.login::after {
+  left: 35%;
+  bottom: -125%;
+  background-color: rgba(2, 128, 144, 0.2);
+  animation: wawes 7s infinite;
+}
+.login > input {
+  font-family: "Asap", sans-serif;
+  display: block;
+  border-radius: 5px;
+  font-size: 16px;
+  background: white;
+  width: 100%;
+  border: 0;
+  padding: 10px 10px;
+  margin: 15px -10px;
 }
 
-@keyframes App-logo-spin {
+.button1 {
+  font-family: "Asap", sans-serif;
+  cursor: pointer;
+  color: black;
+  font-size: 16px;
+  text-transform: uppercase;
+  width: 80px;
+  border: 0;
+  padding: 10px 0;
+  margin-top: 10px;
+  margin-left: -5px;
+  border-radius: 5px;
+  background-color: rgba(244, 91, 105, 1);
+  transition: background-color 300ms;
+}
+.button1:hover {
+  background-color: #272099;
+}
+@keyframes wawes {
   from {
-    transform: rotate(0deg);
+    transform: rotate(0);
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+
+
+.cont {
+  display: flex;
+}
+
+.side-bar {
+  width: 20vw;
+  height: 100vh;
+  background-color: red;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main-heading{
+  position: absolute;
+  font-size:2rem;
+  top:80px;
+  left:40vw;
+
+
+}
+@media (max-width: 768px){
+  .main-heading{
+    left:25vw;
+    top:30vh;
+    font-size:1.2rem;
+  }
+}
+.chart-container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.chart {
+  width: 300px;
+  height: 300px;
+}
+
+.chart-info {
+  text-align: center;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .cont {
+    flex-direction: column;
+  }
+
+  .side-bar {
+    height: 20vh;
+    width: 100%;
+  }
+
+  .chart-container {
+    width: 90%;
+    margin: 10px auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .chart {
+    width: 100%;
+    height: 200px;
   }
 }
